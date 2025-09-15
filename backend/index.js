@@ -58,4 +58,10 @@ app.get('/', (req, res)=>{
 
 
 
-app.listen(port, ()=> console.log('Server started on PORT : '+ port))
+// Export the Express app so serverless builders (like @vercel/node) can use it.
+export default app
+
+// Start a real HTTP server only when not running in Vercel's serverless environment.
+if (!process.env.VERCEL) {
+    app.listen(port, () => console.log('Server started on PORT : ' + port))
+}
