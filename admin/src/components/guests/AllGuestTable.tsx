@@ -98,8 +98,8 @@ export default function GuestTable() {
   const [disabledGuests, setDisabledGuests] = useState<Set<string>>(new Set());
   const [formData, setFormData] = useState<Partial<Guest>>({});
   const [guestsState, setGuestsState] = useState<Guest[]>(initialGuests);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [, setLoading] = useState(false);
+  const [, setError] = useState<string | null>(null);
   const guestsRef = useRef<Guest[]>(initialGuests);
 
   useEffect(() => {
